@@ -30,8 +30,8 @@ spec:
         app: productcatalogue
     spec:
       containers:
-      - name: productcatalogue
-        image: thetips4you/productcatalogue:latest
+      - name: aksconnectiondemo
+        image: aksconnectiondemo.azurecr.io/samplejavaapp:latest
         ports:
         - containerPort: 8020
         livenessProbe:
