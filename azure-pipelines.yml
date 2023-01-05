@@ -42,7 +42,7 @@ stages:
           latest
     - task: PublishPipelineArtifact@1
       inputs:
-              targetPath: '$(Pipeline.Workspace)/s/kubernetes/productcatalogue-service.yaml'
+              targetPath: '$(Pipeline.Workspace)/s/kubernetes'
               artifact: 'manifest'
               publishLocation: 'pipeline'
 
@@ -75,4 +75,4 @@ stages:
         action: 'deploy'
         kubernetesServiceConnection: 'kubernetes_Connections'
         namespace: 'default'
-        manifests: '$(Pipeline.Workspace)/manifest/kubernetes/productcatalogue-service.yaml'
+        manifests: '$(Pipeline.Workspace)/manifest/productcatalogue-service.yaml'
