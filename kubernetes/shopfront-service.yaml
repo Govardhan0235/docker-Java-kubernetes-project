@@ -30,8 +30,8 @@ spec:
         app: shopfront
     spec:
       containers:
-      - name: shopfront
-        image: thetips4you/shopfront:latest
+      - name: aksconnectiondemo
+        image: aksconnectiondemo.azurecr.io/samplejavaapp:latest
         ports:
         - containerPort: 8010
         livenessProbe:
