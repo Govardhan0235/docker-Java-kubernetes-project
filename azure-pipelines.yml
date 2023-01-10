@@ -23,7 +23,7 @@ stages:
     steps:
     - task: Maven@4
       inputs:
-        mavenPomFile: '$(Build.SourcesDirectory)/productcatalogue/pom.xml'
+        mavenPomFile: '$(Build.SourcesDirectory)/shopfront/pom.xml'
         publishJUnitResults: false
         javaHomeOption: 'JDKVersion'
         mavenVersionOption: 'Default'
@@ -36,7 +36,7 @@ stages:
         containerRegistry: 'ACRConnection'
         repository: '$(imageRepo)'
         command: 'buildAndPush'
-        Dockerfile: '$(Build.SourcesDirectory)/productcatalogue/Dockerfile'
+        Dockerfile: '$(Build.SourcesDirectory)/shopfront/Dockerfile'
         tags: |
           $(tag)
           latest
@@ -75,4 +75,4 @@ stages:
         action: 'deploy'
         kubernetesServiceConnection: 'kubernetes_Connections'
         namespace: 'default'
-        manifests: '$(Pipeline.Workspace)/manifest/productcatalogue-service.yaml'
+        manifests: '$(Pipeline.Workspace)/manifest/shopfront-service.yaml'
