@@ -13,7 +13,7 @@ variables:
   tag: '$(Build.BuildId)'
 
 stages:
-- stage: Build for shopfront
+- stage: Build_for_shopfront
   displayName: Build image
   jobs:
   - job: Build
@@ -46,7 +46,7 @@ stages:
               artifact: 'manifest'
               publishLocation: 'pipeline'
               
-- stage: Build for productcatalogue
+- stage: Build_for_productcatalogue
   displayName: Build image
   jobs:
   - job: Build
@@ -75,7 +75,7 @@ stages:
           latest
      
      
-- stage: Build for stockmanager
+- stage: Build_for_stockmanager
   displayName: Build image
   jobs:
   - job: Build
@@ -105,10 +105,7 @@ stages:
           
 - stage: Deploy
   displayName: Deploy to DEV
-  dependsOn: |
-      Build for stockmanager
-      Build for productcatalogue
-      Build for shopfront
+  dependsOn: Build_for_shopfront
      
   variables:
     acrsecrect: k8sexampleacrauth
