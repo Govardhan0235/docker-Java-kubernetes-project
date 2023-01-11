@@ -31,8 +31,8 @@ spec:
         app: stockmanager
     spec:
       containers:
-      - name: aksconnectiondemo
-        image: aksconnectiondemo.azurecr.io/samplejavaapp-stockmanager:latest
+      - name: acrconnection
+        image: acrconnection.azurecr.io/samplejavaapp-stockmanager:latest
         ports:
         - containerPort: 8030
         livenessProbe:
