@@ -134,6 +134,6 @@ stages:
         kubernetesServiceConnection: 'Kubernetes_Connection_GGR'
         namespace: 'default'
         manifests: |
-           '$(Pipeline.Workspace)/manifest/productcatalogue-service.yaml'
-           '$(Pipeline.Workspace)/manifest/stockmanager-service.yaml'
-           '$(Pipeline.Workspace)/manifest/shopfront-service.yaml'
+           $(Pipeline.Workspace)/manifest/productcatalogue-service.yaml
+           $(Pipeline.Workspace)/manifest/stockmanager-service.yaml
+           $(Pipeline.Workspace)/manifest/shopfront-service.yaml
