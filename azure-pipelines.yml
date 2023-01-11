@@ -40,11 +40,7 @@ stages:
         tags: |
           $(tag)
           latest
-    - task: PublishPipelineArtifact@1
-      inputs:
-              targetPath: '$(Pipeline.Workspace)/s/kubernetes'
-              artifact: 'manifest'
-              publishLocation: 'pipeline'
+    
               
 - stage: Build_for_productcatalogue
   displayName: Build image
@@ -101,11 +97,16 @@ stages:
         Dockerfile: '$(Build.SourcesDirectory)/stockmanager/Dockerfile'
         tags: |
           $(tag)
-          latest        
+          latest 
+    - task: PublishPipelineArtifact@1
+      inputs:
+              targetPath: '$(Pipeline.Workspace)/s/kubernetes'
+              artifact: 'manifest'
+              publishLocation: 'pipeline'          
           
 - stage: Deploy
   displayName: Deploy to DEV
-  dependsOn: Build_for_shopfront
+  dependsOn: Build_for_stockmanager
      
   variables:
     acrsecrect: k8sexampleacrauth
