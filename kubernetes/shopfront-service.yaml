@@ -30,8 +30,8 @@ spec:
         app: shopfront
     spec:
       containers:
-      - name: aksconnectiondemo
-        image: aksconnectiondemo.azurecr.io/samplejavaapp-shopfront:latest
+      - name: acrconnection.azurecr.io
+        image: acrconnection.azurecr.io/samplejavaapp-shopfront:latest
         ports:
         - containerPort: 8010
         livenessProbe:
