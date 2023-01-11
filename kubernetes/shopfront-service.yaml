@@ -30,7 +30,7 @@ spec:
         app: shopfront
     spec:
       containers:
-      - name: acrconnection.azurecr.io
+      - name: acrconnection
         image: acrconnection.azurecr.io/samplejavaapp-shopfront:latest
         ports:
         - containerPort: 8010
