@@ -75,7 +75,7 @@ stages:
           latest
      
      
-  - stage: Build for stockmanager
+- stage: Build for stockmanager
   displayName: Build image
   jobs:
   - job: Build
