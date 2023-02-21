@@ -3,7 +3,7 @@ FROM eclipse-temurin:8-jre-alpine as build
 WORKDIR /application
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} application.jar
-RUN java -Djarmode=layertools -jar application.jar extract
+#RUN java -Djarmode=layertools -jar application.jar extract
 
 #stage 2
 FROM eclipse-temurin:8-jre-alpine
